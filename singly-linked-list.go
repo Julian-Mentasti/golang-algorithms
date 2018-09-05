@@ -6,7 +6,13 @@ This implements basic operations of a linked-list.
     - Traverse
 */
 
-/* Singly linked-list */
+/* Singly linked-list 
+
+  Head     -> [Node] -> ... -> [Node] -> nil
+(pointer)                               (End)
+
+
+*/
 
 package "fmt"
 
@@ -15,6 +21,7 @@ type node  struct {
     next *node
 }
 
+// Adds a node to the end of the list
 func addNode(n node, list *node) *node  {
     if list == nil {
         return node
@@ -25,6 +32,14 @@ func addNode(n node, list *node) *node  {
             item.next = n
             return list
         }
+    }
+}
+
+// Deletes the node in the end of the list
+func deleteNode(list *node) *node {
+    if (list.next.next == nil) {
+        list.next == nil
+        return list
     }
 }
 
